@@ -1,13 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <beans xmlns="http://www.springframework.org/schema/beans"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance" xmlns:aop="http://www.springframework.org/schema/aop"
-	xsi:schemaLocation="http://www.springframework.org/schema/beans
- http://www.springframework.org/schema/beans/spring-beans-3.0.xsd
- http://www.springframework.org/schema/aop
- http://www.springframework.org/schema/aop/spring-aop-3.0.xsd ">
+	xmlns:context="http://www.springframework.org/schema/context"
+	xsi:schemaLocation="http://www.springframework.org/schema/aop http://www.springframework.org/schema/aop/spring-aop-3.2.xsd
+		http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd
+		http://www.springframework.org/schema/context http://www.springframework.org/schema/context/spring-context-3.2.xsd">
  
-	<aop:aspectj-autoproxy />
-	
+	<!-- <aop:aspectj-autoproxy /> -->
+	<aop:aspectj-autoproxy proxy-target-class="true"/>
+	<aop:config proxy-target-class="true">
+    <!-- other beans defined here... -->
+	</aop:config>
+	<!-- <context:component-scan base-package="com.mtit.aspects" /> -->
+
 <!-- Definition for student bean -->
 	<bean id="employeeBean" class="com.mtit.beans.Employee">
 		<property name="name" value="Zara" />
@@ -15,10 +20,15 @@
 		<property name="salary" value="11000" />
 	</bean>
 	
-	<!-- <bean id="employeesManager" class="com.mtit.dataaccess.EmployeesManager" >
+	<bean id="studentBean" class="com.mtit.aop.lab.Students">
+		<property name="name" value="Zara" />
+		<property name="age" value="11" />
+	</bean>
 	
-	</bean> -->
+	<bean id="employeesManager" class="com.mtit.dataaccess.EmployeesManager" />
+	
 	
 <!-- Definition for logging aspect -->
-	<bean id="logging" class="com.mtit.aspects.AopDatabase" />
+	<bean id="database" class="com.mtit.aspects.DatabaseAspect" />
+	<bean id="logging" class="com.mtit.aop.lab.AopLogging" />
 </beans>

@@ -16,6 +16,7 @@ public class AopLogging {
 	 */
 	@Pointcut("execution(* com.mtit.aop.lab.*.*(..))")
 	private void selectAll() {
+		System.out.println("selectAll()");
 	}
 
 	/**

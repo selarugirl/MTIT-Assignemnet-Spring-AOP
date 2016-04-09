@@ -2,7 +2,7 @@ package com.mtit.beans;
 
 import java.io.Serializable;
 
-public class Employee implements Serializable{
+public class Employee implements Bean{
 
 	/**
 	 * 
@@ -19,6 +19,7 @@ public class Employee implements Serializable{
 		this.id = id;
 	}
 	public String getName() {
+		System.out.println("name : "+this.name);
 		return name;
 	}
 	public void setName(String name) {
@@ -35,6 +36,10 @@ public class Employee implements Serializable{
 	}
 	public void setSalary(double salara) {
 		this.salary = salara;
+	}
+	@Override
+	public void print(){
+		System.out.println("nane : "+this.name+" saralay : "+this.salary);
 	}
 	
 }
