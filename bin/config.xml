@@ -20,5 +20,5 @@
 	</bean> -->
 	
 <!-- Definition for logging aspect -->
-	<bean id="logging" class="com.mtit.dataaccess.AopDatabase" />
+	<bean id="logging" class="com.mtit.aspects.AopDatabase" />
 </beans>

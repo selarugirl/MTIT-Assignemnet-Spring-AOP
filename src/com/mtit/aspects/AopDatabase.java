@@ -1,4 +1,4 @@
-package com.mtit.dataaccess;
+package com.mtit.aspects;
 
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
