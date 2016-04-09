@@ -2,16 +2,17 @@
 <classpath>
 	<classpathentry kind="src" path="src"/>
 	<classpathentry kind="con" path="org.eclipse.jdt.launching.JRE_CONTAINER/org.eclipse.jdt.internal.debug.ui.launcher.StandardVMType/JavaSE-1.7"/>
-	<classpathentry kind="lib" path="C:/Users/Lakna/Downloads/libraries-set1/libraries-set1/springJAR/spring-aop-3.2.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Lakna/Downloads/libraries-set1/libraries-set1/springJAR/spring-aspects-3.2.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Lakna/Downloads/libraries-set1/libraries-set1/springJAR/spring-beans-3.2.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Lakna/Downloads/libraries-set1/libraries-set1/springJAR/spring-context-3.2.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Lakna/Downloads/libraries-set1/libraries-set1/springJAR/spring-context-support-3.2.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Lakna/Downloads/libraries-set1/libraries-set1/springJAR/spring-core-3.2.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Lakna/Downloads/libraries-set1/libraries-set1/springJAR/spring-expression-3.2.0.RELEASE.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Lakna/Downloads/libraries-set1/libraries-set1/springJAR/aopalliance/aopalliance.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Lakna/Downloads/libraries-set1/libraries-set1/springJAR/aspectjrt/aspectjrt.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Lakna/Downloads/libraries-set1/libraries-set1/springJAR/aspectj-weaver/aspectj-weaver.jar"/>
-	<classpathentry kind="lib" path="C:/Users/Lakna/Downloads/libraries-set1/libraries-set1/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Roledene/workspace/MTIT-Assignemnet-Spring-AOP/lib/aopalliance.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Roledene/workspace/MTIT-Assignemnet-Spring-AOP/lib/aspectjrt.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Roledene/workspace/MTIT-Assignemnet-Spring-AOP/lib/aspectj-weaver.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Roledene/workspace/MTIT-Assignemnet-Spring-AOP/lib/commons-logging-1.0.4.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Roledene/workspace/MTIT-Assignemnet-Spring-AOP/lib/spring-aop-3.2.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Roledene/workspace/MTIT-Assignemnet-Spring-AOP/lib/spring-aspects-3.2.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Roledene/workspace/MTIT-Assignemnet-Spring-AOP/lib/spring-beans-3.2.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Roledene/workspace/MTIT-Assignemnet-Spring-AOP/lib/spring-context-3.2.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Roledene/workspace/MTIT-Assignemnet-Spring-AOP/lib/spring-context-support-3.2.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Roledene/workspace/MTIT-Assignemnet-Spring-AOP/lib/spring-core-3.2.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Roledene/workspace/MTIT-Assignemnet-Spring-AOP/lib/spring-expression-3.2.0.RELEASE.jar"/>
+	<classpathentry kind="lib" path="C:/Users/Roledene/workspace/MTIT-Assignemnet-Spring-AOP/lib/mysql-connector-java-5.1.38-bin.jar"/>
 	<classpathentry kind="output" path="bin"/>
 </classpath>
