@@ -14,7 +14,11 @@ public class AopLogging {
 	 * Following is the definition for a pointcut to select all the methods
 	 * available. So advice will be called for all the methods.
 	 */
-	@Pointcut("execution(* com.mtit.aop.lab.*.*(..))")
+//	@Pointcut("execution(* com.mtit.aop.lab.*.*(..))")
+//	private void selectAll() {
+//	}
+
+	@Pointcut("execution(* com.mtit.beans.*.*(..))")
 	private void selectAll() {
 	}
 

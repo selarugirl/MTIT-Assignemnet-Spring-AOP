@@ -29,14 +29,19 @@ public class MainApp {
 //		students.getName();
 //		students.getAge();
 		
+		AbstractApplicationContext context2 = new ClassPathXmlApplicationContext("config.xml");
+		Employee employee = (Employee) context2.getBean("employeeBean");
+		employee.getName();
+//==		students.getAge();
+		
 		// get row
-		Employee employee = EmployeeService.getRow(1);
-		if(employee == null){
-			System.err.println("no rows were found");
-		}else{
-			System.out.println("name "+ employee.getName());
-			System.out.println("salary "+employee.getSalara());
-		}
+//		Employee employee = EmployeeService.getRow(1);
+//		if(employee == null){
+//			System.err.println("no rows were found");
+//		}else{
+//			System.out.println("name "+ employee.getName());
+//			System.out.println("salary "+employee.getSalara());
+//		}
 		
 		// insert row
 //		Employee employee = new Employee();
@@ -51,13 +56,13 @@ public class MainApp {
 		
 		//update row
 //		Employee employee = new Employee();
-		employee.setName("lakna ariyathilaka");
-		boolean result = EmployeeService.update(employee);
-		if(result){
-			System.out.println("updated");
-		}else{
-			System.err.println("not updated");
-		}
+//		employee.setName("lakna ariyathilaka");
+//		boolean result = EmployeeService.update(employee);
+//		if(result){
+//			System.out.println("updated");
+//		}else{
+//			System.err.println("not updated");
+//		}
 		
 	}
 
