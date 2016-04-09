@@ -1,4 +1,4 @@
-package com.mtit.services;
+package com.mtit.dataaccess;
 
 import java.sql.Connection;
 import java.sql.PreparedStatement;
@@ -7,10 +7,8 @@ import java.sql.SQLException;
 import java.sql.Statement;
 
 import com.mtit.beans.Employee;
-import com.mtit.dataaccess.DBUtil;
-import com.mtit.dataaccess.DatabaseType;
 
-public class EmployeeService {
+public class EmployeesManager {
 
 	public static void displayAllRows(){}
 	public static Employee getRow(int id) throws SQLException{
@@ -34,7 +32,7 @@ public class EmployeeService {
 				employee.setId(id);
 				employee.setName(resultSet.getString("name"));
 				employee.setDob(resultSet.getDate("dob").toString());
-				employee.setSalara(resultSet.getDouble("salary"));
+				employee.setSalary(resultSet.getDouble("salary"));
 				return employee;
 			}else{
 				System.err.println("no rows were found");
@@ -69,13 +67,14 @@ public class EmployeeService {
 			statement = connection.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
 			statement.setString(1,employee.getName());
 			statement.setString(2, employee.getDob());
-			statement.setDouble(3, employee.getSalara());
+			statement.setDouble(3, employee.getSalary());
 			int affected = statement.executeUpdate();
 			if(affected == 1){
 				keys = statement.getGeneratedKeys();
 				keys.next();
 				int newKey = keys.getInt(1);
 				employee.setId(newKey);
+				System.out.println("data inseted successful");
 				return true;
 			}else{
 				System.err.println("no rows affected");
@@ -103,7 +102,6 @@ public class EmployeeService {
 					 "WHERE id = ?";
 		Connection connection = null;
 		PreparedStatement statement = null;
-		ResultSet keys = null;
 		
 		try {
 			connection = DBUtil.getConnection(DatabaseType.MSSQL);
@@ -111,7 +109,7 @@ public class EmployeeService {
 			statement = connection.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
 			statement.setString(1,employee.getName());
 			statement.setString(2, employee.getDob());
-			statement.setDouble(3, employee.getSalara());
+			statement.setDouble(3, employee.getSalary());
 			statement.setInt(4, employee.getId());
 			
 			int affected = statement.executeUpdate();
@@ -135,4 +133,40 @@ public class EmployeeService {
 			}
 		}
 	}
+
+	public static boolean delete(int id) throws SQLException{
+		String sql = "DELETE FROM employee WHERE id = ?";
+		
+		Connection connection = null;
+		PreparedStatement statement = null;
+		
+		try {
+			connection = DBUtil.getConnection(DatabaseType.MSSQL);
+			System.out.println("Connected");
+			statement = connection.prepareStatement(sql,Statement.RETURN_GENERATED_KEYS);
+			statement.setInt(1,id);
+			
+			int affected = statement.executeUpdate();
+			if(affected == 1){
+				System.out.println("delete successful");
+				return true;
+			}else{
+				System.err.println("no rows affected");
+				return false;
+			}
+		} catch (SQLException e) {
+			DBUtil.processException(e);
+			return false;
+		} finally {
+			
+			if(statement != null){
+				statement.close();
+			}
+			if(connection != null){
+				connection.close();
+			}
+		}
+	}
+
+	
 }

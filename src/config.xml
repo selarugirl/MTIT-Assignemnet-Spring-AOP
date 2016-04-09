@@ -9,11 +9,16 @@
 	<aop:aspectj-autoproxy />
 	
 <!-- Definition for student bean -->
-	<bean id="studentsBean" class="com.mtit.aop.lab.Students">
+	<bean id="employeeBean" class="com.mtit.beans.Employee">
 		<property name="name" value="Zara" />
-		<property name="age" value="11" />
+		<property name="dob" value="12-12-2016" />
+		<property name="salary" value="11000" />
 	</bean>
 	
+	<!-- <bean id="employeesManager" class="com.mtit.dataaccess.EmployeesManager" >
+	
+	</bean> -->
+	
 <!-- Definition for logging aspect -->
-	<bean id="logging" class="com.mtit.aop.lab.AopLogging" />
+	<bean id="logging" class="com.mtit.dataaccess.AopDatabase" />
 </beans>
