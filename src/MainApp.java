@@ -16,6 +16,7 @@ import com.mtit.beans.Employee;
 import com.mtit.dataaccess.DBUtil;
 import com.mtit.dataaccess.DatabaseType;
 import com.mtit.dataaccess.EmployeesManager;
+import com.mtit.services.CRUDService;
 //import org.springframework.test.context.ContextConfiguration;
 
 //@ContextConfiguration("/simpleaspect.xml")
@@ -24,15 +25,24 @@ public class MainApp {
 	
 	public static void main (String args[]) throws SQLException{
 		
-		AbstractApplicationContext context2 = new ClassPathXmlApplicationContext("config.xml");
-		Bean employee = (Employee) context2.getBean("employeeBean");
-		Students students = (Students) context2.getBean("studentBean");
-		students.getName();
-		System.out.println("------------------------------------------");
-		//EmployeesManager employeesManager = (EmployeesManager) context2.getBean("employeesManager");
-		employee.print();
-		EmployeesManager employeesManager = (EmployeesManager) context2.getBean("employeesManager");
-		employeesManager.insert(employee);
+//		AbstractApplicationContext context2 = new ClassPathXmlApplicationContext("config.xml");
+//		Bean employee = (Employee) context2.getBean("employeeBean");
+//		Students students = (Students) context2.getBean("studentBean");
+//		CRUDService crudService = (CRUDService) context2.getBean("crudService");
+//		
+//		students.getName();
+//		System.out.println("------------------------------------------");
+//		//EmployeesManager employeesManager = (EmployeesManager) context2.getBean("employeesManager");
+//		employee.print();
+//		EmployeesManager employeesManager = (EmployeesManager) context2.getBean("employeesManager");
+//		employeesManager.insert(employee);
+		System.out.println("------------crud service-----------------------");
+		AbstractApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
+		CRUDService crudService = context.getBean("crudService",CRUDService.class);
+		Bean employee = (Employee) context.getBean("employeeBean");
+//		crudService.getEmployee().getName();
+		
+		crudService.getEmployeesManager().insert(employee);
 		
 		
 	}

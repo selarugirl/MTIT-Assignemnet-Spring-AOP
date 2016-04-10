@@ -1,6 +1,8 @@
 package com.mtit.services;
 
+import com.mtit.beans.Bean;
+
 public interface Service {
 
-	void validate();
+	void validate(Bean bean);
 }
