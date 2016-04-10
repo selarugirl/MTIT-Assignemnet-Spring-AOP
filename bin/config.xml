@@ -11,9 +11,25 @@
 <!-- Definition for student bean -->
 	<bean id="employeeBean" class="com.mtit.beans.Employee">
 		<property name="name" value="Zara" />
+
 		<!--  <property name="age" value="11" />-->
+
+		<property name="dob" value="12-12-2016" />
+		<property name="salary" value="11000" />
+
 	</bean>
 	
+	<bean id="studentBean" class="com.mtit.aop.lab.Students">
+		<property name="name" value="Zara" />
+        <property name="age" value="11" />
+
+	</bean>
+	
+	<!-- <bean id="employeesManager" class="com.mtit.dataaccess.EmployeesManager" >
+	
+	</bean> -->
+	
 <!-- Definition for logging aspect -->
-	<bean id="logging" class="com.mtit.aop.lab.AopLogging" />
+	<bean id="logging" class="com.mtit.aspects.AopDatabase" />
+	<bean id="loggingStudent" class="com.mtit.aop.lab.AopLogging" />
 </beans>

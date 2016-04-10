@@ -11,7 +11,7 @@ public class Employee implements Serializable{
 	private int id;
 	private String name;
 	private String dob;
-	private double salara;
+	private double salary;
 	public int getId() {
 		return id;
 	}
@@ -30,11 +30,11 @@ public class Employee implements Serializable{
 	public void setDob(String dob) {
 		this.dob = dob;
 	}
-	public double getSalara() {
-		return salara;
+	public double getSalary() {
+		return salary;
 	}
-	public void setSalara(double salara) {
-		this.salara = salara;
+	public void setSalary(double salara) {
+		this.salary = salara;
 	}
 	
 }

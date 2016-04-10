@@ -13,7 +13,7 @@ import com.mtit.aop.lab.Students;
 import com.mtit.beans.Employee;
 import com.mtit.dataaccess.DBUtil;
 import com.mtit.dataaccess.DatabaseType;
-import com.mtit.services.EmployeeService;
+import com.mtit.dataaccess.EmployeesManager;
 
 public class MainApp {
 	
@@ -24,27 +24,37 @@ public class MainApp {
 	
 	public static void main (String args[]) throws SQLException{
 		
-//		AbstractApplicationContext context2 = new ClassPathXmlApplicationContext("config.xml");
-//		Students students = (Students) context2.getBean("studentsBean");
-//		students.getName();
-//		students.getAge();
-		
 		AbstractApplicationContext context2 = new ClassPathXmlApplicationContext("config.xml");
 		Employee employee = (Employee) context2.getBean("employeeBean");
-		employee.getName();
-//==		students.getAge();
+		//EmployeesManager employeesManager = (EmployeesManager) context2.getBean("employeesManager");
+		EmployeesManager.insert(employee);
+		
+		
+		
+		AbstractApplicationContext context1 = new ClassPathXmlApplicationContext("config.xml");
+		Students students = (Students) context1.getBean("studentBean");
+//		employee.getName();
+		students.getAge();
 		
 		// get row
 //		Employee employee = EmployeeService.getRow(1);
+
+//		Employee employee = EmployeesManager.getRow(1);
+
 //		if(employee == null){
 //			System.err.println("no rows were found");
 //		}else{
 //			System.out.println("name "+ employee.getName());
 //			System.out.println("salary "+employee.getSalara());
 //		}
+
 		
 		// insert row
 //		Employee employee = new Employee();
+
+//		
+//		// insert row
+////		Employee employee = new Employee();
 //		employee.setName("lakna");
 //		employee.setDob("12-12-2015");
 //		employee.setSalara(30000);
@@ -63,6 +73,11 @@ public class MainApp {
 //		}else{
 //			System.err.println("not updated");
 //		}
+
+		
+		//delete
+//		EmployeesManager.delete(2);
+
 		
 	}
 
