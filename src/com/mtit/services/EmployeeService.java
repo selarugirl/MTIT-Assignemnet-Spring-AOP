@@ -1,5 +1,9 @@
 package com.mtit.services;
 
-public class EmployeeService {
+public class EmployeeService implements Service {
 
+	@Override
+	public void validate(){
+		
+	}
 }
