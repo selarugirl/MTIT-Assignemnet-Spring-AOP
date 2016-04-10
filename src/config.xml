@@ -14,7 +14,7 @@
 	<!-- <context:component-scan base-package="com.mtit.aspects" /> -->
 
 <!-- Definition for student bean -->
-	<bean id="employeeBean" class="com.mtit.beans.Employee">
+	<bean id="employeeBean" name="employee" class="com.mtit.beans.Employee">
 		<property name="name" value="Zara" />
 
 		<!--  <property name="age" value="11" />-->
@@ -29,8 +29,10 @@
         <property name="age" value="11" />
 
 	</bean>
-		
-	<bean id="employeesManager" class="com.mtit.dataaccess.EmployeesManager" />
+	
+	<bean id="employeesManager" name="employeesManager" class="com.mtit.dataaccess.EmployeesManager" />
+	
+	<bean id="crudService" name="crudService" class="com.mtit.services.CRUDService" autowire="byName" />
 	
 	
 <!-- Definition for logging aspect -->

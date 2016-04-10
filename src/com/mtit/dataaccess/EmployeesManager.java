@@ -191,10 +191,5 @@ public class EmployeesManager implements Database {
 		}
 	}
 
-	// @Override
-	// public boolean insert(Employee employee) throws SQLException {
-	// // TODO Auto-generated method stub
-	// return false;
-	// }
 
 }

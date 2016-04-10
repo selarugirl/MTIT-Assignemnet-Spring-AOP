@@ -5,6 +5,8 @@ import java.sql.PreparedStatement;
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
+import javax.swing.plaf.synth.SynthSpinnerUI;
+
 import org.aspectj.lang.annotation.After;
 import org.aspectj.lang.annotation.AfterReturning;
 import org.aspectj.lang.annotation.AfterThrowing;
@@ -26,6 +28,7 @@ public class DatabaseAspect {
 
 	@Pointcut("execution(* com.mtit.dataaccess.Database.*(..))")
 	private void selectAll() {
+		System.err.println("is this work----------->>>>>>>>");
 	}
 
 	@Before("selectAll()")
@@ -38,8 +41,17 @@ public class DatabaseAspect {
 
 
 	@After("selectAll()")
-	public void afterAdvice() {
-		System.out.println("start after advice");
+	public void afterAdvice() throws SQLException {
+		if (resultSet != null) {
+			resultSet.close();
+		}
+		if (statement != null) {
+			statement.close();
+		}
+		if (connection != null) {
+			connection.close();
+		}
+		System.out.println("all the open connections are closed");
 	}
 
 /*	@AfterReturning(pointcut = "selectAll()", returning = "retVal")
