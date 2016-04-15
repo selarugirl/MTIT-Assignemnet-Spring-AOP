@@ -4,5 +4,5 @@ import com.mtit.beans.Bean;
 
 public interface Service {
 
-	void validate(Bean bean);
+	void validate(Bean bean) throws Exception;
 }
