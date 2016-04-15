@@ -1,5 +1,8 @@
 
 
+import java.io.BufferedReader;
+import java.io.IOException;
+import java.io.InputStreamReader;
 import java.sql.Connection;
 import java.sql.DriverManager;
 import java.sql.ResultSet;
@@ -24,12 +27,20 @@ import com.mtit.services.EmployeeSystem;
 public class MainApp {
 	
 	
-	public static void main (String args[]) throws SQLException{
+	public static void main (String args[]) throws SQLException, IOException{
 		
 		System.out.println("Employee Management System");
-		String name = args[0];
-		String bday = args[1];
-		Double salary = Double.valueOf(args[2]);
+		BufferedReader br = new BufferedReader(new InputStreamReader(System.in));
+		System.out.println("please enter a name");
+		String _name = br.readLine();
+		System.out.println("please enter the birthday");
+		String _bday = br.readLine();
+		System.out.println("please enter the salary");
+		double _salary = Double.parseDouble(br.readLine());
+		
+		String name = _name;
+		String bday = _bday;
+		Double salary = _salary;
 		
 		
 		
