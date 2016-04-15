@@ -17,6 +17,7 @@ import com.mtit.dataaccess.DBUtil;
 import com.mtit.dataaccess.DatabaseType;
 import com.mtit.dataaccess.EmployeesManager;
 import com.mtit.services.CRUDService;
+import com.mtit.services.EmployeeSystem;
 //import org.springframework.test.context.ContextConfiguration;
 
 //@ContextConfiguration("/simpleaspect.xml")
@@ -24,6 +25,13 @@ public class MainApp {
 	
 	
 	public static void main (String args[]) throws SQLException{
+		
+		System.out.println("Employee Management System");
+		String name = args[0];
+		String bday = args[1];
+		Double salary = Double.valueOf(args[2]);
+		
+		
 		
 //		AbstractApplicationContext context2 = new ClassPathXmlApplicationContext("config.xml");
 //		Bean employee = (Employee) context2.getBean("employeeBean");
@@ -38,11 +46,12 @@ public class MainApp {
 //		employeesManager.insert(employee);
 		System.out.println("------------crud service-----------------------");
 		AbstractApplicationContext context = new ClassPathXmlApplicationContext("config.xml");
-		CRUDService crudService = context.getBean("crudService",CRUDService.class);
-		Bean employee = (Employee) context.getBean("employeeBean");
+		//CRUDService crudService = context.getBean("crudService",CRUDService.class);
+		//Bean employee = (Employee) context.getBean("employeeBean");
+		EmployeeSystem employeeSystem = context.getBean("employeeSystem",EmployeeSystem.class);
 //		crudService.getEmployee().getName();
-		
-		crudService.getEmployeesManager().insert(employee);
+		employeeSystem.addEmployee(name, bday, salary, context);
+		//crudService.getEmployeesManager().insert(employee);
 		
 
 		
