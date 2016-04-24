@@ -83,10 +83,10 @@ public class EmployeesManager implements Database {
 				statement.setDouble(3, employee.getSalary());
 				int affected = statement.executeUpdate();
 				if (affected == 1) {
-					keys = statement.getGeneratedKeys();
-					keys.next();
-					int newKey = keys.getInt(1);
-					employee.setId(newKey);
+//					keys = statement.getGeneratedKeys();
+//					keys.next();
+//					int newKey = keys.getInt(1);
+//					employee.setId(newKey);
 					System.out.println("data inseted successful");
 					return true;
 				} else {

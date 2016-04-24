@@ -34,7 +34,7 @@
 	
 	<bean id="crudService" name="crudService" class="com.mtit.services.CRUDService" autowire="byName" />
 	
-	<bean id="employeeSystem" name="employeeSystem" class="com.mtit.services.EmployeeSystem"/>
+	<bean id="employeeService" name="employeeService" class="com.mtit.services.EmployeeService"/>
 	
 	
 <!-- Definition for logging aspect -->
