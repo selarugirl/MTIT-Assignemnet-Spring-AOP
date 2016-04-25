@@ -37,9 +37,14 @@ public class Employee implements Bean{
 	public void setSalary(double salara) {
 		this.salary = salara;
 	}
+	
 	@Override
 	public void print(){
 		System.out.println("nane : "+this.name+" saralay : "+this.salary);
+	}
+	@Override
+	public String toString(){
+		return("nane : "+this.name+"\nbday"+this.dob+"\nsaralay : "+this.salary);
 	}
 	
 }

@@ -39,7 +39,7 @@ public class EmployeesManager implements Database {
 				Employee employee = new Employee();
 				employee.setId(id);
 				employee.setName(resultSet.getString("name"));
-				employee.setDob(resultSet.getDate("dob").toString());
+				employee.setDob(resultSet.getString("dob"));
 				employee.setSalary(resultSet.getDouble("salary"));
 				return employee;
 			} else {
